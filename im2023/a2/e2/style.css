@@ -1,0 +1,165 @@
+
+*{
+  box-sizing: border-box;
+  background-origin: border-box;
+  margin: 0;
+}
+
+/* For my root colour palette I decided to use five colours that I knew I could work and play with to create an interesting and fun webpage.
+Using Adobe colour I was able to generate a colour pallete that suited. Orange and Blue are complimentary colours as they sit directly 
+across from eachother on the colour wheel so I decided to have the background orange and all information such as headings and written information be a 
+deep dark blue. The colours in this pallete are very mellow, they are warm and soft.  */
+:root{
+  --col-01:#0D3B66;
+  --col-02:#FAF0CA;
+  --col-03:#F4D35E;
+  --col-04:#EE964B;
+  --col-05:#F95738; 
+  --border: 1px solid var(--col-02);
+}
+
+/* I added a header to html, so I could therefore customise and create a more interesting title. This time round, I decided to play around with gradient and have a linear gradient of three colours that are within my colour palette.
+I think this added a bit of excitment and fun to the webpage. If I were to re-do this exercise again, I would like to place a shape behind the title, such a round oval to create even more contrast against and bring the title into the foreground a lot more.
+I think the colour palette I chose for this experiment was really nice, but I believe I could next time play around with various fonts to make the webpage look more professional. At this stage this webpage is rather simple, easy to understand, fun and warm. */
+header h1 {
+  font-size: 60px;
+  text-align: center;
+  font-weight: 600;
+  background-image:linear-gradient(to left,#FAF0CA, #0D3B66);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+/* For font style, colour and size I wanted everything to be easy to read. I used the most simple of fonts and the most user friendly.*/
+}
+h1{
+  background-color:white;
+  text-align: center;
+  font-weight: 900;
+  }
+  
+
+  h2{
+    font: Helvetica;
+   background-color:var(--col-03);
+  text-align: center;
+  font-size: 25px;}
+
+
+/* For the body I decided the background colour would be a warm, soft orange. */
+body{
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;;
+  flex-direction:column;
+  background-color:#EE964B;
+  color: var(--col-01);
+  padding: 5vw;
+}
+
+
+/* For each Recipe Box I decided to add a solid blue border. I based my design of flashcards. I wanted each recipe to be its own, and be easily separated from eachother. This 
+is why I added a margin of 15px, to create space between each recipe. These recipes are very much like flashcards, using short statements and words to describe the core details of a recipe.
+*/
+.RecipeBox{
+  flex-direction: column;
+  border: solid;
+  background-color:var(--col-02);
+  margin: 15px;
+}
+/*    */
+.FilterSection{
+color: #0D3B66;
+font:Arial;
+font-style: normal;
+font-size: 20px;
+}
+/* I played around with the different colours for the Filter box. This colour felt most appropriate to me because of the contrast of the colour of the text againist it. Although the filter box as a whole looks a little unusal being a box upon the page, I think it was the best decision in order to create something that looks easy to use. I like the way the filter looks when categories are clicked, I think it allows the user to know that this section is a filter and can be interacted with. */
+.FilterBox{
+  background-color:var(--col-02);
+}
+/* Memorability is an important usability goal to always keep in mind when creating a webpage. As a filter is a useful tool for seeking information, users also need to be reminded sometimes of the actions they have made. 
+Thats where changing the colour of the filter button is important into ensuring that the user always knows exactly what they have clicked or navigated to. I decided to have my filter buttons as a deep red, the fifth colour in my colour palette, that doesn't feature much elsewhere in this webpage.
+Red and blue are contrasting colours. When a button is clicked it stays blue and the rest are red, allowing a user to know that they have clicked onto that specifc information. */
+.FilterButton{ 
+  color: var(--col-05);
+  background-color:var(--col-03);
+  font-size: 15px;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+}
+
+.SelectedFilter{
+  color:#0D3B66
+}
+
+.RecipeLink{ 
+color:#0D3B66;
+}
+
+
+.Author{
+  font-size: 25px;
+  text-align: center;
+}
+
+.RecipeImageContainer{
+background-color:#FAF0CA;
+}
+
+/* I decided to add some shape to the recipe images by applying a border-raidus of 10px, this slightly curved the inner corners of the images and just gave the images some dimensions instead of being plain old rectangles*/
+.RecipeImg{
+  margin:10px;
+  border: 4px solid rgb(4, 4, 4);
+  width: 400px;
+  float: left;
+  border-radius: 10px;
+}
+
+
+.Attribution{
+  font-size: 14px;
+
+}
+
+/* Categories that featured in the filter were made bold and a larger font size. Other information were made to be a smaller font size and italic. I think 
+it is important to have various font sizes in order to capture a users attention, in this case the font that is larger is more significant and circles back to the filter I have created.  */
+.Cuisine{
+  font-size: 25px;
+  font-style: bold;
+
+}
+
+.TimeToCook{
+  font-size: 20px;
+  font-style: italic;
+}
+
+.SkillLevel{
+  font-size: 20px;
+  font-style: italic;
+}
+
+.Course{
+  font-size: 25px;
+  font-style: bold;
+}
+
+.Servings{
+  font-size: 17px;
+  font-style: italic;
+}
+
+.Dietary{
+  font-size: 25px;
+}
+
+
+
+.DateUpdated{
+  font-size: 17px;
+}
+
+.SpecialEquipment{
+  font-size: 17px;
+}
+
