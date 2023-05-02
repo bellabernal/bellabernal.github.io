@@ -1,0 +1,268 @@
+
+
+/* For my webpage page, I decided to add a 10px margin, 
+to ensure elements didn't overlap and centre them wihtin the space evenly.*/
+*{
+  box-sizing: border-box;
+  background-origin: border-box;
+  margin: 10px;
+}
+
+:root{
+  /* first two colours come from Kuroi's Manga Pallete Palette */
+  /* https://lospec.com/palette-list/manga-pallete */
+  --col-01:#171219;
+  --col-02:#f2fbeb;
+  --col-03:#5252ff;
+  --col-04:#b6e878;
+  font-size: 16px;
+  /* scroll behaviour makes the <a> links to ids scroll to position over time rather than immediately */
+  scroll-behavior: smooth;
+}
+ /* I have added a transition css property and adjusted its time to 6s, this allows the transition from dark mode to light mode to take exactly 6 seconds to occur. Transitions are important, as they are a smooth and 
+ gentle way for something to change in web design. For example it is important in this case, as a change from light to dark mdoe is quite intense, it is important for a users eyes to adjust and therefore the transition must be 
+ at least more than 5 seconds. I also decided to allow this amount of time for the transition so it is in synch with the animation that the mode-button creates.*/
+body{
+  padding: 1rem;
+  background-color: var(--col-02);
+  color: var(--col-01);
+  transition: 6s;
+}
+
+nav ol li a {
+  color: var(--col-01);
+  cursor: pointer;
+}
+nav {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* For my colour choices, I have decided to go with green and purple. Green and purple are contrasting colours, 
+and as contrasting colours they will always go well alongside eachother. Both being bright and vibrant colours, they 
+work perfecting in both dark and light mode. I have also decided to add a border radius of 8px, to create a more rounded shape of each category box. 
+Curved corners are more appealing as they are simply more easy on the eyes. For this reason I chose this style, I also feel it works well with the other elements on my webpage such as the throbber and mode-button in the 
+top right corner. Round corners also feel more modern. My aim was to create a more modern and professinal style webpage.  */
+nav li{
+  flex:1;
+  margin-top: 1rem;
+  width: 320px;
+  height:50px;
+  background-color: rgb(157, 207, 124);
+  color:#a9a6aa;
+  border-radius: 8px;
+  padding: 0.5rem;
+  text-align: left;
+  text-decoration: none;
+  
+  
+  
+  
+}
+/* I then applied a hover over each category box. This allows the user to know that the box is in-fact clickable. I also added the pointer cursor to add this feedback too. 
+I chose for the color to be purple when hovered over. I also added a inner box shadow for a more modern look, it creates inner depth to emulate a concave surface. */
+nav li:hover { 
+  background-color: #b158da;
+  box-shadow: 20px 20px 50px 10px rgb(174, 213, 136) inset;
+  
+}
+
+
+  section{
+  margin-bottom: 2rem;
+}
+
+h1{
+  font-size: 3rem;
+}
+
+
+h2{
+  font-size: 2rem;
+}
+
+p{
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+figcaption{
+  width: fit-content;
+}
+
+dl ul{
+  margin-bottom: 0;
+}
+
+li{
+  font-size: 1rem;
+}
+
+dd{
+  padding-left: 60px;
+}
+
+li ul{
+  padding-left: 40px;
+}
+.img-wrapper{
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.img-figure{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article-img{
+  width: 80%;
+}
+
+.res-columns{
+  column-width: 25rem;
+}
+ 
+/* I had to add style to the mode button, that can change and switch from dark and light mode. Firstly I decided to add opacity to this button, as the position is sticky meaning it will stay in the top right hand corner
+even when scrolling, I had to make sure the text beneath it is able to be read. Therefore I made the opacity 70%. I also added
+the pointer cursor, so the user knows the button is clickable like the others. I added a dotted border to be in theme with the style of my other interative elements. I also wanted my button to be 
+oval shapped, with no straight lines and only one flat face. That way it has difference from the other buttons on the left side of the webpage and 
+it has its own unique style. I kept the font simple to read, and it is an instructive button that clearly states whether you can change from light to 
+dark mode. I altered its size to be smaller and thinner, as the button itself should not cover up to much of the text when scrolling. That way it can hide in the corner, but still also be noticeable if you need 
+it to be. I decided to make the colour of the button the same as the colour of the category boxes in order to keep a similar theme. I think it also allows 
+for an better understanding of whether you are light or dark mode. */
+#mode-button{
+  float: right;
+  position: sticky;
+  top: 1rem;
+  background-color: rgb(157, 207, 124);
+  font-size:large;
+  width: 150px;
+  height:50px;
+  opacity:70%;
+  cursor:pointer;
+  border: dotted;
+  border-radius: 50%;
+  
+}
+
+/* For the mode button, I also decided to add a hover. The button will go purple and the text will go green. This creates a great responsive feedback, so the 
+user knows the button can be clicked. I decided to also add an animaiton. 
+In UX, motion and animation can be helpful and communicative. The choice of motion in this case was rather to induce delight or entertain users. I set the animation transition to be 5 seconds, so that if the user does click the button, it would spin in time with the transition of light to 
+dark mode in synch. The future idea would be to have the animation spin to occur on the click instead of on the hover. The choice of animation 
+is to add character and fun to the button. It also helps the user spend more time on the page, just like the hover effect. It will help improve your visitors' dwell time. As I mentioned future 
+aim would be for the animation to occur on click, and end once the transition completes.   */
+#mode-button:hover{
+  background-color: #b158da;
+  color: #b6e878;
+  animation: spin 5s linear ;
+  animation-iteration-count: infinite;
+}
+/* I also decided on incoporating an active state for this button. I wanted the colour to turn a dark grey when it 
+is pressed.The :active CSS pseudo-class represents an element that is being activated by the user. When the cursor presses down the element is 
+is activated. Therefore in this case the button will be grey when its pressed down / activated.  */ 
+#mode-button:active{
+  background-color: #686769;
+}
+
+
+#load-body{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* For the 'Click to Load Page' button I adjusted some style choices. Firstly I decided to add a 
+dotted border. This choice was in order to feel cohesive to my 'load-throbber' as I decided to use a spinner. I also 
+adjusted the cursor, so that when the mouse was hovered over it, the pointer appears. This 
+therefore changes the cursor into a hand with an outstretched index finger. */
+#load-link{
+  background-color: transparent;
+  border: 0;
+  border: dotted;
+  font-size: large;
+  cursor: pointer;
+
+
+}
+/* For this interaction I also added a hover, where the text then becomes magnified.
+The use of the hover state gives us feedback that we can interact with that element, easily. 
+A hover state communicates to the user that they have placed a cursor above an interactive element, in this case the 
+'Click to Load Page' button.  */
+#load-link:hover{
+line-height: 1rem;
+color: #080708;
+font-size: x-large;
+animation-name: loadlinkmove;
+animation-duration: 3s;
+animation-iteration-count: infinite;
+}
+
+@keyframes loadlinkmove{
+  from {background-color:  #b185bd;}
+  to {background-color:rgb(157, 207, 124);}
+}
+
+/* For my loading throbber for this experiment, I chose to design a spinnning element. 
+I decided not to use the classic progress bar, as I think a spinner allows a user to feel less stress and anxiousness. 
+A spinner is indefinite, you can never see how long it will take or how close to loading/buffering it is. When you 
+see a progress bar that is not displaying progress and is so close to finishing it is infrutaiting. The spinner relieves some of this stress with a visual 
+form that leads to cyclical animation. Thinking about design and usability, spinners are also easily recognizeable, can be used at lower resolutions and there allow for are a more flexible UI design choice.
+I think a spinner has a rather modern feel, referencing newer technology and the famous spinning pinwheel, which was a variation of the mouse pointer in Apple's macOs.  
+ */
+
+ /* I decdied to make the throbber purple in colour, and decided to use square shapes rather than circles for some 
+ variation and difference. The spin is infinite and linear, always spinning clockwise. */
+#load-throbber{
+  display: none;
+  border: 16px solid #b185bd; 
+  border-style: dotted;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s infinite linear ;
+  }
+   @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+
+/* Media Queries */
+
+/* medium devices 600 - 992 */
+@media only screen and (min-width: 600px) {
+  :root{
+    font-size: 20px;
+  }
+  
+  .img-wrapper{
+    width: 75%;
+    margin: 1.5rem auto;
+  }
+
+}
+
+/* medium devices 992 + */
+@media only screen and (min-width: 992px) {
+  :root{
+    font-size: 24px;
+  }
+
+  .img-wrapper{
+    max-width: fit-content;
+    float: right;
+    margin: 1.5rem;
+  }
+
+}
+
+@media (prefers-reduced-motion) {
+  :root{
+    scroll-behavior: auto;
+  }
+ 
+}
