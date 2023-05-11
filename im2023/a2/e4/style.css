@@ -1,0 +1,155 @@
+*{
+  box-sizing: border-box;
+  background-origin: border-box;
+  margin: 0;
+
+}
+
+body {
+  background-color: var(--col-02)
+}
+
+/* I went for a cool toned colour pallete, made up of green, purples and blues. I felt as though the video 
+itself is quite calm and relaxing with intense and vibrant music. I would balance the colours out
+but ensuring the colour palette I used was calm, relaxing and soft. I also wanted to grab some of the 
+colours out of the video (purple) to create a balanced and matched feel.*/
+:root{
+  --col-01:#84DCC6;
+  --col-02:#D6EDFF;
+  --col-03:#d3ece1;
+  --col-04:#ACD7EC;
+  --col-05:#8B95C9;
+  --col-06:#478978;
+  --border: 2px solid var(--col-02);
+}
+
+.video-player-wrapper{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 0 auto;
+  border:var(--col-06)
+}
+
+
+
+/* becuase I want to overlay the play icon on the video they need to be in their own wrapper */
+.video-element-wrapper{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.video-element-wrapper:hover {
+  cursor: pointer;
+  }
+
+/*I decided to add a border to the video element, to add some character and create more space between the buttons 
+and the video itself. It felt too close together and almost clustered without a border to separate 
+the two. */
+#videoElement{
+  width: 100%;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  border-color:var(--col-06);
+  border-width: 20px;
+  border-style: solid;
+  border-radius: 30px;
+}
+
+#videoPlayOverlay{
+  width: 8rem;
+  height: 8rem;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  justify-self: center;
+  align-self: center;
+  opacity: 0.6;
+  display: none;
+}
+
+.video-controls-wrapper{
+  display: flex;
+  justify-content: center;
+}
+/* this overwrites the above display:flex - something which is then undone when the JS loads */
+#controlsWrapper{
+  display: none;
+}
+
+.video-control-button{
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  border: none;
+  background-color:var(--col-04);
+}
+.video-control-button:hover{
+  background-color: var(--col-05);
+}
+.video-control-button:active{
+  background-color: var(--col-06);
+}
+.button-icon{
+  pointer-events: none;
+}
+
+#playButton{
+  background-image: url('./icons/play.svg');
+}
+#muteButton{
+  background-image: url('./icons/mute.svg');
+}
+
+#fullscreenButton{
+  background-image: url('./icons/fullScreen.svg');
+}
+
+/* Most full screen buttons, tend to have some sort of interaction once hovered over. After looking 
+at other media players I discovered it was quite common. It provides a great visual cue to the users that help 
+them understand and navigate actions better. So for that reason I decided to 
+add an interaction when the full screen button is hovered over. I found a free vector file online, I liked, and 
+downloaded to my icons folder, that way it could easily be added here. */
+
+#fullscreenButton:hover {
+  background-image: url('./icons/fullscreenopen.svg');
+  background-size: 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+.video-progress-bar{
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  height: 2rem;
+  flex-grow: 1;
+  cursor: pointer;
+  background-color: var(--col-05);
+  box-shadow: 0 1px 2px var(--col-03) inset;
+}
+::-moz-progress-bar {
+  background-color: var(--col-05);
+}
+
+::-webkit-progress-bar {
+  background-color: var(--col-05);
+  box-shadow: 0 1px 2px var(--col-02) inset;
+}
+::-webkit-progress-value {
+  background-color: var(--col-01);
+}
+
+.timeline-loading{
+  background-image: -moz-repeating-linear-gradient(45deg, var(--col-03) 0% 2%, transparent 2% 4%, red 4%);
+  background-size: 200% 100%;
+  animation: loadingAnimation 4s linear infinite;
+}
+
+@keyframes loadingAnimation {
+  100%{
+    background-position: 50% 0%;
+  }
+}
