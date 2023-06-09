@@ -1,0 +1,182 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	
+}
+
+/* For my interactive browser based project I have chosen to use a very simple colour palette, of blue, pinks, grey and yellow. 
+Yellow is bright and fun, my interactive adjective was playful and I wanted to fufil and show this 
+using colour. I also aimed to present my webpage for a younger audience, therefore bright pastel colour choices 
+were essential. I decided on using mostly soft edges, very clear solid borders, all to make the page simple and 
+easy to navigate. Each section is broken up easily and everything is very clear on where interactions can occur and 
+what information is simply just information displayed on the page. I decided to use silhouttes of animals, as I believe 
+it ties in nicely and smoothly to my webpage. It also has a great effect when the user clicks and drags around the icon, 
+as the white background dissapears and the user is just moving the icon. Something I implemented in my javascript. */
+html{
+    border: solid;
+	border-color: #EFF1F3; /* I have chosen to place a solid white border, to separate and draw attention to content on my web page., */
+}
+
+body {
+	background-color: #FED766;
+	font-family: monospace; /*Monospaced fonts are designed to be easier to read, used a lot in translating and therefore is perfect for learning languages, each character is separated equally*/
+	border: solid 20px;
+	border-color: #070808;
+}
+
+.aud-box{
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
+	align-items: center;
+	margin-top: 30px;
+}
+
+.box {
+	display: flex;
+	flex-flow: column;
+    margin-top: 100px;
+    margin-left: 100px;
+	margin-right: 100px;
+	margin-bottom: 150px;
+	padding: 20 20px 20px 20px;
+	background-color: #009FB7;
+	border-radius: 12px;
+	border-style:dotted;
+	border-color: #070808;
+}
+
+header {
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	height: 50px;
+	width:50%;
+	margin-bottom: 50px;
+	margin-top: 30px;
+	margin-left: 300px;
+	margin-right: 100px;
+	background-color: #fae39c;
+	border-radius: 50%;
+	border-color: rgb(11, 11, 11);
+	border-style: solid;
+}
+/* Text and font also had to be very simple and easy to understand. Therefore accesible for young children 
+or adults to use as a learning resource. I decided on making all text black and therefore stand out clearly amongst 
+the page.*/
+h1{
+	text-align: center;
+	margin-top: 100px;
+	
+}
+
+h2{
+	text-align: center;
+	background-color: #EFF1F3;
+}
+
+h3{
+	text-align: center;
+	font-size: 15px;
+
+}
+
+p{
+	margin-left: 100px;
+	margin-right: 100px;
+}
+
+/* I separated my divs, using class names -lists, list. list and list -item. Although this came across tricky to 
+navigate in my code at first, I think it became much more simple as the coding when on. I was able to undertsand which sections
+were which and know exactly how to use my styling to alter and change sizes, borders and colours.*/
+.lists {
+	display: flex;
+	flex: 1;
+	width: 100%;
+	overflow-x: scroll;
+	
+}
+
+.lists .list {
+	display: flex;
+	flex-flow: column;
+	flex: 1;
+
+	width: 100%;
+	min-width: 250px;
+	max-width: 350px;
+	height: 70%;
+	min-height: 150px;
+
+	background-color: #86868b;
+	margin: 0 15px;
+	border-radius: 8px;
+	padding: 8px;
+	transition: all 0.2s linear;
+	
+}
+
+.lists .list .list-item {
+	background-color: #EFF1F3;
+	border-radius: 8px;
+	padding: 15px 20px;
+	text-align: center;
+	margin: 4px 0px;
+	
+}
+
+/* for my button, I went for a small button, I added a pointer cursor so the user knew it was clickable and added 
+a colour change once hovered and clicked on. All these small style details allow the user to have some feedback, 
+and know what has occured when the button is clicked. The box also grows in height, which is a physically change that occurs, if the 
+user places there mouse at the very bottom they realise the box can now be scrolled upon. The scroll occurs, and the user is 
+invited to scroll right where they can now see the answers. This only occurs if the button is clicked. In information design, answers
+are always hidden on the page, so therefore I had to implement this into my final design. As we want answers to occur after various 
+trys of placing our icons in the appropriate box with their matching Onomatopoeia */
+
+ #show-image-button {
+		background-color:"rgb(224, 187, 218";
+		border: none;
+		color: rgb(7, 7, 7);
+		width: 50%;
+		height:30px;
+		border-radius: 12px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		padding: 0px;
+		font-size: 10px;
+		cursor: pointer;
+ }
+  
+  #show-image-button:hover {
+	color: rgb(253, 243, 126); /*text colour change on hover */
+    cursor: pointer;}
+
+  
+
+
+#my-image{
+	height: 400px;
+	align-items: center;
+	width: 100vw;
+	margin-top: 20px;
+	margin-left:50px;
+}
+
+.btn {
+	border: solid; /* Removed borders */
+	border-radius: 8px;
+	color: rgb(13, 14, 13); /* Added a text color */
+	background-color: #b3f094;
+	padding: 14px 28px; /* Added some padding */
+	margin-left:10px;
+	margin-top: 10px;
+	cursor: pointer; /* Added a pointer cursor on mouse-over */
+  }
+
+
+
+
+
+

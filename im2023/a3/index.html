@@ -3,17 +3,111 @@
 <html lang="en">
     
     <head>
-
         <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-
         <link rel="stylesheet" href="style.css">
-
-        <script src="script.js"></script>
-
+        <script src="script.js" defer></script>
     </head>
 
     <body>
+     
+     
+     <!-- I incoporated a button in the top left hand corner, to display my deisgn intentions and 500 words, the cursor is a pointer and therefore makes the button recognisable, as well 
+    as having a solid black border.--> 
+     <button class="btn" onclick="alert('For my final interactive media project I have chosen the design principle - information design and adjective playful. I have represented both these thoroughly throughout my webpage. I have decided to show information design, through a use of teaching and learning. My conceptual idea behind this project combines languages, words, sounds and images. It is about matching and knowing how to connect words to images or sounds. I am creating a webpage for a younger audience, specifically using bright and playful colours and a simple design with a drag and drop interaction that is its main feature. I am also aiming for my audience to learn, therefore the information on the page is rather simple than heavy or complex. Due to the conceptual idea being that of onomatopoeia I thought it was important to include audio. Therefore I used the audio tag, and added a sound effect that can be played. This I think also adds a playfulness that gives the user something different to interact with on the page. The language used to describe actions is also very accessible being that is instructive and makes sense to the audience. As seen the user is given two game like boards, where they are invited to drag and drop icons to their matching words.')">My 500 Words Pt1!</button>
+     <button class="btn" onclick="alert('Colours change as the interaction takes place and users are able to see where they drop and icon and which icon they have last interacted with. I created this using the drag and drop interactions in JavaScript, specially adjusting the drag-enter, drag leave and drop functions and changing the colour accordingly. I was also able to define the exact space the icons can go. If you try to place an icon out of the game-board it will automatically go back to its original spot after the mouse is let go. This is a great way for the user to know the game is only occurring in that space. I have used padding, and borders to make sure this space is clearly defined to the user. I have made the background colour contrasting and therefore captures the attention of the audience.  As I had a focus on information design, my final project was based on understanding and matching correct images with correct answers. There was a learning outcome. I decided I had to have the answers displayed on the page, and like most webpages that use information design the answers are hidden until the user decides they have made the right choices. Therefore I created a button that upon click showed the answers, once scrolled to the right. This was a great way to show the answers in a way that was hidden at first and didn’t allow the user to cheat. As information design is rather a way of ‘displaying information effectively, rather than just attractively or for artistic expression’, the way information is presented in my webpage is appropriate to being easy to find and set out in a display that separates each word from another. This means that each word has its own meaning, and therefore has been displayed in its own box, colour and border. ')">My 500 Words Pt2!</button>
 
-    </body>
+
+     <h1>Learning Spanish Onomatopoeia</h1>
+<br><br>
+<p>What is Onomatopoeia?:<br> <br> Onomatopoeia is a type of word that represents a certain sound, 
+  and is often used for literary effect. By learning various onomatopoeia sounds at a young age, children are able to get a head start in understanding 
+  language and its meaning. This learning is important in understanding how letters and syllables sound.<br>
+  <br> Here I invite you to drag and drop each icon to match its onmatopoeia. Think about how each icon sounds and how you would spell that word. <br>
+<br> Check your answers at the very end, by clicking the button and scrolling so the answers appear.
+
+
+<div class="aud-box">
+  <audio controls>
+  <source src="sounds/bark.wav" type="audio/ogg">
+  <source src="sounds/bark.wav" type="audio/mpeg">
+</audio>
+<img class="img1" src="images/Aibk48Bi4.png" alt="HTML tutorial" style="width:42px;height:42px;"></div>
+<h3>Do you remember what I sound like?</h3>
+
+
+</p>
+
+      <div class="box">
+        <header>
+          <h3>How do we sound in english?</h3>
+        </header>
+        <div class="lists">
+          <div class="list">
+            <div class="list-item"draggable="true">
+              <img src="images/Aibk48Bi4.png" alt="Dog Icon"width="80" height="70">
+            </div>
+            <div class="list-item"draggable="true">
+              <img src="images/silhouttecat.png" alt="Cat Icon"width="60" height="70"></div>
+            <div class="list-item" draggable="true">
+          <img src="images/bird.png" alt = "Bird Icon" width="80" height ="70"></div>
+          </div>
+          <div class="list"><h2>"Meaow"</h2>
+            </div>
+          <div class="list"><h2>"Woof"</h2></div>
+          <div class="list"><h2>"Tweet"</h2></div>
+          </div>
+         
+      </div>
+<!--A lot of the code in my html, meant I had to create separate divs, named list, list, list-item. This allowed 
+for me to create the classes for my boardgame and therefore can identify them in my javascript. At first it was super difficult 
+to create these divs, but with styling in css, I think they worked out well. I was able to copy and paste and use the same javascript 
+to manage the english gameboard and the spanish gameboard, which cut half the work out. -->
+    
+      <div class="box">
+      <header>
+        <h3>Como suena en espanol?</h3>
+      </header>
+
+      <div class="lists">
+        <div class="list">
+          <div class="list-item" draggable="true">
+            <img src="images/Aibk48Bi4.png" alt="Dog Icon"width="80" height="70">
+          </div>
+          <div class="list-item" draggable="true">
+            <img src="images/silhouttecat.png" alt="Cat Icon"width="60" height="70"></div>
+          <div class="list-item" draggable="true">
+            <img src="images/bird.png" alt = "Bird Icon" width="80" height="70"></div>
+        </div>
+        <div class="list"><h2>"Miau"</h2></div>
+        <div class="list"><h2>"Guau Guau"</h2></div>
+        <div class="list"><h2>"Pio Pio"</h2></div>
+
+
+        
+        <button class=btn id="show-image-button"><h3>Answers!</h3></button>
+        <img id="my-image" src="images/finalanswers2.png" style="display: none;">
+        <script>
+           const showImageButton = document.getElementById("show-image-button");
+           const myImage = document.getElementById("my-image"); 
+           showImageButton.addEventListener("click", () => { 
+              myImage.style.display = "block"; 
+           });
+        </script>
+
+      
+
+      <body>
+
+
+       
+
 
 </html>
+
+
+    
+
+
+
+ 
+
