@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="shouldershrug.css">
+</head>
+
+<body>
+    <div class="title-section">
+        <h1>“The Deadline Dodger”</h1>
+            <h2>Shrug like you didn't see that email</h2>
+        <div class="click-indicator">Lets Begin</div>
+    </div>
+
+    <div class="main-content">
+        <div class="main-container">
+            <div class="video-section">
+                <div class="container">
+                    <canvas id="output_canvas"></canvas>
+                    <video id="webcam"></video>
+                </div>
+            </div>
+    
+    <div class="controls">
+        <p class="status" id="status">Loading...</p>
+        <p class="instructions" id="instructions">Lets guide you through shoulder shrug exercises.</p>
+        
+        <div id="exercise-controls" class="hidden">
+            <div class="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+            <div class="stats">
+                <span id="reps">Reps: 0</span>
+                <span id="hold-time">Hold: 0s</span>
+                <span id="tilt-angle">Angle: 0°</span>
+            </div>
+        </div>
+        
+        <button id="start-button">Start Camera</button>
+        <button id="exercise-button" class="hidden">Start Exercise</button>
+        <video autoplay loop muted>
+            <source src="shrug animation-final.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+    </div>
+
+
+
+    <div class="click-indicator">Return</div>
+</div>
+        </div>
+
+    <script src="shouldershrug.js"></script>
+</body>
+</html>
