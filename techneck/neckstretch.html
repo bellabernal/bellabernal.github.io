@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neck Stretch Exercise Tracker</title>
+    <link rel="stylesheet" href="neckstretch.css">
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>“The Stretch of Mild Regret” For those who realize their neck has been in the same position since Tuesday.</h1>
+    
+    <div class="container">
+        <div class="video-container">
+            <video id="videoElement" autoplay muted playsinline></video>
+            <canvas id="canvasElement"></canvas>
+        </div>
+        
+        <div class="controls-panel">
+            <div class="status-display">
+                <div class="exercise-status" id="exerciseStatus">INITIALIZING...</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+            
+            <div class="stretch-selector">
+                <h3>Stretch Direction:</h3>
+                <div class="direction-buttons">
+                    <button id="leftStretchBtn" onclick="setStretchDirection('left')" class="direction-btn">LEFT STRETCH</button>
+                    <button id="rightStretchBtn" onclick="setStretchDirection('right')" class="direction-btn">RIGHT STRETCH</button>
+                </div>
+            </div>
+            
+            <div class="metrics">
+                <div class="metric">
+                    <div class="metric-label">Reps Completed</div>
+                    <div class="metric-value" id="repsCount">0</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">Hold Time</div>
+                    <div class="metric-value" id="holdTime">0s</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">Head Tilt</div>
+                    <div class="metric-value" id="headTilt">--°</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-label">Arm Position</div>
+                    <div class="metric-value" id="armPosition">--%</div>
+                </div>
+            </div>
+            
+            <div class="feedback" id="feedback">Select a stretch direction and position yourself in front of the camera</div>
+            
+            <button id="startButton" onclick="startExercise()">START EXERCISE</button>
+            <button id="resetButton" onclick="resetExercise()">RESET</button>
+        </div>
+    </div>
+
+    <!-- Celebration Overlay -->
+    <div class="celebration-overlay" id="celebrationOverlay">
+        <div class="celebration-content">
+            <div class="celebration-title">STRETCH COMPLETED!</div>
+            <div class="celebration-message" id="celebrationMessage">Excellent form!</div>
+            <div class="celebration-stats" id="celebrationStats">Rep 1 completed in 15.0s</div>
+            <div class="celebration-continue">Click anywhere to continue...</div>
+        </div>
+    </div>
+
+    <script src="neckstretch.js"></script>
+</body>
+</html>
