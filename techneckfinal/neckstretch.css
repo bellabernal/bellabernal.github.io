@@ -1,0 +1,361 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    overflow-x: hidden;
+}
+
+.title-section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: radial-gradient(circle at center, #001100 0%, #000000 70%);
+}
+
+h1 {
+    width: 80%;
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+    padding: 20px;
+    color: #00ff00;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    text-shadow: 0 0 15px rgba(0, 255, 0, 0.7);
+}
+
+.click-indicators {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+}
+
+.click-indicator {
+    font-size: 20px;
+    border: 2px solid #00ff00;
+    padding: 10px 20px;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+    background-color: transparent;
+}
+
+.click-indicator:hover {
+    background-color: #003300;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
+
+.main-content {
+    min-height: 100vh;
+    padding: 40px 0;
+    margin-top: 50px;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    display: none;
+}
+
+.main-content.active {
+    display: block;
+}
+
+.title-section.hidden {
+    display: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 1400px;
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+/* Video Section */
+.video-container {
+    flex: 1;
+    min-width: 50%;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+#canvasElement {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #00ff00;
+}
+
+#videoElement {
+    position: absolute;
+    margin-top: 15px;
+    left: 0;
+    top: 0;
+    width: 150%;
+    height: 150%;
+    visibility: hidden;
+}
+
+/* Controls Panel */
+.controls-panel {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 45%;
+}
+
+/* Status Display */
+.exercise-status {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #001a00;
+    border: 2px solid #00ff00;
+    margin: 10px 0;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background-color: #00ff00;
+    transition: width 0.3s ease;
+}
+
+/* Stretch Selector */
+.stretch-selector h3 {
+    font-size: 18px;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.direction-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.direction-btn {
+    background-color: #001a00;
+    color: #00ff00;
+    border: 2px solid #00ff00;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    transition: all 0.3s ease;
+    width: 70%;
+}
+
+.direction-btn:hover {
+    background-color: #003300;
+}
+
+.direction-btn.active {
+    background-color: #003300;
+}
+
+/* Metrics */
+.metrics {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.metric {
+    flex: 1;
+    text-align: center;
+    min-width: 100px;
+}
+
+.metric-label {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.metric-value {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Feedback */
+.feedback {
+    font-size: 18px;
+    text-align: left;
+    margin-bottom: 15px;
+    padding: 20px;
+    background-color: rgb(6, 6, 6);
+}
+
+/* Buttons */
+#startButton, #resetButton, #returnButton {
+    background-color: #001a00;
+    color: #00ff00;
+    border: 2px solid #00ff00;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    transition: all 0.3s ease;
+    width: 70%;
+    margin: 5px auto;
+}
+
+#startButton:hover, #resetButton:hover, #returnButton:hover {
+    background-color: #003300;
+}
+
+#returnButton {
+    background-color: #001100;
+    border-color: #66ff66;
+    color: #66ff66;
+}
+
+#returnButton:hover {
+    background-color: #002200;
+}
+
+/* Celebration Overlay */
+.celebration-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    font-family: 'Courier New', monospace;
+}
+
+.celebration-content {
+    background: #000000;
+    border: 3px solid #00FF00;
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.5);
+}
+
+.celebration-title {
+    color: #00FF00;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+}
+
+.celebration-message {
+    color: #00FF00;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.celebration-stats {
+    color: #00FF00;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.celebration-continue {
+    color: #00FF00;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .video-container {
+        min-width: 100%;
+    }
+    
+    .controls-panel {
+        max-width: 100%;
+    }
+    
+    .metrics {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .direction-buttons {
+        width: 100%;
+    }
+    
+    .direction-btn, #startButton, #resetButton, #returnButton {
+        width: 90%;
+    }
+    
+    h1 {
+        font-size: 32px;
+        letter-spacing: 3px;
+    }
+    
+    .click-indicators {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+        width: 100%;
+    }
+    
+    h1 {
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+    
+    .click-indicator {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+}
